@@ -148,7 +148,7 @@ qiime feature-table tabulate-seqs \
   --o-visualization Visualizations/filtered-rep-seqs.qzv
 ```
 
-# 8. Visualize taxonomy and make a relative abundance barplot
+# 9. Visualize taxonomy and make a relative abundance barplot
 
 ### Visualize taxonomy
 ```
@@ -166,7 +166,7 @@ qiime taxa barplot \
   --o-visualization Visualizations/taxa-bar-plots.qzv
 ```
 
-# 9. Generate a tree for phylogenetic diversity analysis
+# 10. Generate a tree for phylogenetic diversity analysis
 
 ```
 qiime phylogeny align-to-tree-mafft-fasttree \
@@ -177,7 +177,7 @@ qiime phylogeny align-to-tree-mafft-fasttree \
   --o-rooted-tree rooted-tree.qza
 ```
 
-# 10. Make an alpha rarefaction plot
+# 11. Make an alpha rarefaction plot
 
 ```
 qiime diversity alpha-rarefaction \
@@ -190,7 +190,7 @@ qiime diversity alpha-rarefaction \
 
 ### View the rarefaction plot and open filtered-table.qzv > Interactive Sample Detail. Choose a Sampling Depth with two considerations: 1) Captures most of the diversity in the rarefaction plot and 2) how many samples are retained in the analysis. 
 
-# 11. Core metrics for Alpha and Beta diversity
+# 12. Core metrics for Alpha and Beta diversity
 
 ```
 qiime diversity core-metrics-phylogenetic \
@@ -201,7 +201,7 @@ qiime diversity core-metrics-phylogenetic \
   --output-dir core-metrics-results
 ```
 
-# 12. Statistical significance for Alpha diversity
+# 13. Statistical significance for Alpha diversity
 
 ```
 cd core-metrics-results
@@ -241,7 +241,7 @@ qiime diversity alpha-group-significance \
   --o-visualization Alpha_diversity/evenness_significance.qzv
 ```
 
-# 13. Correlation analyses for Alpha diversity
+# 14. Correlation analyses for Alpha diversity
 
 ### Shannon
 ```
@@ -275,7 +275,7 @@ qiime diversity alpha-correlation \
   --o-visualization evenness_correlation_Spearman.qzv
 ```
 
-# 14. Beta diversity PERMANOVA comparing infected and uninfected frogs (ChytridResult)
+# 15. Beta diversity PERMANOVA comparing infected and uninfected frogs (ChytridResult)
 
 ```
 mkdir Beta_diversity
@@ -301,7 +301,7 @@ qiime diversity beta-group-significance \
   --p-pairwise
 ```
 
-# 15. Beta diversity Mantel test (ZoosporeEquivalents)
+# 16. Beta diversity Mantel test (ZoosporeEquivalents)
 
 ### Unweighted UniFrac
 ```
@@ -327,14 +327,14 @@ qiime diversity beta-correlation \
 
 ### Repeated above commands with latitude and longitude
 
-# 16. Correlation analyses with Positive infection status samples only
+# 17. Correlation analyses with Positive infection status samples only
 
 ### Run following steps and then repeat steps 13 and 15:
 #### 1) Make a metadata file that includes only Positive samples
 #### 2) Filter the feature table using that metadata file
 #### 3) Rerun step 11 creating a separate core-metrics-results-positives
 
-# 17. adonis analysis - PERMANOVA with multiple variables (infection, latitude, longitude)
+# 18. adonis analysis - PERMANOVA with multiple variables (infection, latitude, longitude)
 
 ### Unweighted UniFrac
 ```
@@ -354,7 +354,7 @@ qiime diversity adonis \
   --o-visualization Beta_diversity/wunifrac_adonis_chytrid_lat_long.qzv
 ```
 
-# 18. Plot taxonomic relative abundance by infection status
+# 19. Plot taxonomic relative abundance by infection status
 
 ```
 cd ..
@@ -362,7 +362,7 @@ mkdir group_plot
 ```
 
 ### Makes a table grouping samples by infection status
-### Metadata file had two columns: SampleID (Positive and Negative) and SampleName (Infected and Uninfected)
+#### Metadata file had two columns: SampleID (Positive and Negative) and SampleName (Infected and Uninfected)
 ```
 qiime feature-table group \
   --i-table filtered-table.qza \
